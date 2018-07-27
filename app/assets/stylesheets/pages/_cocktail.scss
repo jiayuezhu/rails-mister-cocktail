@@ -1,8 +1,11 @@
-// Place all the styles related to the cocktails controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 
 .container {
+font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 72px;
 }
 
 .cards {
@@ -27,7 +30,7 @@
   color: white;
   position: relative;
   transition: all 0.5s !important;
-  margin: 20px;
+  margin: 20px auto;
   opacity: 0.9;
 }
 
@@ -45,9 +48,3 @@
 .cockatil-img {
 
 }
-
-
-
-
-
-

@@ -5,14 +5,14 @@
         <h1>Cocktails</h1>
       </div>
     </div>
-    <%= link_to "Add a drink", new_cocktail_path %>
   </div>
 </div>
-<div class="container cards">
+<div class="container">
 <div class="row">
   <% @cocktails.each do |cocktail| %>
     <%= link_to cocktail_path(cocktail) do %>
-      <div class="card col-xs-12 col-md-3 col-md-offset-1" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/dpqnck1ln/image/upload/c_fill,h_150,w_250/v1478872860/wpxdlcnfskixssmhbdjg.jpg'); background-repeat: no-repeat;">
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/dpqnck1ln/image/upload/c_fill,h_150,w_250/v1478872860/wpxdlcnfskixssmhbdjg.jpg'); background-repeat: no-repeat;">
         <div class="card-description">
           <%= cocktail.name %>
           <ul>
@@ -22,8 +22,18 @@
           </ul>
         </div>
       </div>
+    </div>
     <% end %>
   <% end %>
+  <div class="col-xs-12 col-sm-4">
+    <%= link_to new_cocktail_path do %>
+    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://assets.bonappetit.com/photos/57d83228b22e7d6464951423/master/w_1200,c_limit/ballers-cocktail.jpg'); background-repeat: no-repeat;">
+      <div style="text-align: center; color: black; font-weight: bold; font-size: 18px">
+        <p>Add A Drink</p>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>
 </div>
 
