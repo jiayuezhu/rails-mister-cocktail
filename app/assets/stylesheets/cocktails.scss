@@ -1,0 +1,53 @@
+// Place all the styles related to the cocktails controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container {
+}
+
+.cards {
+/*  margin: 0 auto;*/
+  display: flex;
+  justify-content: center;
+}
+
+
+.row {
+  .col-sm-12 {
+    text-align: center;
+  }
+}
+
+.card {
+  border-radius: 5px;
+  height: 175px;
+  width: 285px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  color: white;
+  position: relative;
+  transition: all 0.5s !important;
+  margin: 20px;
+  opacity: 0.9;
+}
+
+.card:hover {
+  transform: scale(1.02) !important;
+  opacity: 1;
+}
+
+.card-description {
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
+
+.cockatil-img {
+
+}
+
+
+
+
+
+

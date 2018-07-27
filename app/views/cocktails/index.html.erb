@@ -1,0 +1,29 @@
+<div class="banner">
+  <div class="" style="background-image: linear-gradient(rgba(0,0,0,1.5), rgba(0,0,0,0)), url('http://www.harbourviewhotelmacau.com/sites/default/files/praha_bar_3custom_0.jpg'); background-size: cover; height: 80vh;">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>Cocktails</h1>
+      </div>
+    </div>
+    <%= link_to "Add a drink", new_cocktail_path %>
+  </div>
+</div>
+<div class="container cards">
+<div class="row">
+  <% @cocktails.each do |cocktail| %>
+    <%= link_to cocktail_path(cocktail) do %>
+      <div class="card col-xs-12 col-md-3 col-md-offset-1" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/dpqnck1ln/image/upload/c_fill,h_150,w_250/v1478872860/wpxdlcnfskixssmhbdjg.jpg'); background-repeat: no-repeat;">
+        <div class="card-description">
+          <%= cocktail.name %>
+          <ul>
+            <% Ingredient.where(id: Dose.where(cocktail_id: cocktail.id)).each do |o| %>
+              <li><%= o.name %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>
+</div>
+
