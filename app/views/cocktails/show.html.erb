@@ -1,5 +1,41 @@
 
-<div class="">
-  <div class="col-xs-12 cocktail-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://res.cloudinary.com/dpqnck1ln/image/upload/c_fill,h_150,w_250/v1478872860/wpxdlcnfskixssmhbdjg.jpg'); background-size: cover; height: 40vh; width: 60vw;"></div>
-  <%= @cocktail.name %>
+<div class="background" style="background-image: linear-gradient(rgba(0,0,0,1.5), rgba(0,0,0,0.7)), url('http://www.harbourviewhotelmacau.com/sites/default/files/praha_bar_3custom_0.jpg'); background-size: cover; height: 100vh;">
+<%= link_to cocktails_path do %>
+  <button class="btn btn-primary" style="position: absolute; top: 20px; left: 20px;">BackHome</button>
+<% end %>
+
+<%= link_to @cocktail, method: :delete, data: { confirm: 'Are you sure?' } do %>
+  <button class="btn btn-warning" style="position: absolute; top: 20px; right: 20px;">DeleteIt</button>
+<% end %>
+  <div class="col-xs-12 cocktail-img" style="background-image: url('<%= @cocktail.photo %>'); background-repeat: no-repeat; background-size: cover; height: 25vh; width: 25vw; position: absolute; top: 50vh; left: 36vw; border-radius: 5px;"></div>
+  <div class="container">
+
+  <div style="text-align: center;">
+    <h1 style="font-weight: bold; color: #aaa;"><%= @cocktail.name %></h3>
+
+  <table class="dec-table" style="color: white; position: absolute; left: 42vw; top: 20vh;">
+    <tr>
+      <th>Ingredients</th>
+      <th>Quantity</th>
+      <th><%= link_to new_cocktail_dose_path(@cocktail) do %>
+            <i class="fas fa-plus-circle"></i>
+          <% end %>
+      </th>
+    </tr>
+
+    <% @cocktail.doses.each do |dose| %>
+      <tr>
+        <td><%= dose.ingredient.name %></td>
+        <td><%= dose.description %></td>
+        <td><%= link_to edit_cocktail_path(@cocktail) do %>
+              <i class="fas fa-edit"></i>
+            <% end %>
+        </td>
+      </tr>
+    <% end %>
+
+  </table>
+  </div>
+  </div>
+
 </div>

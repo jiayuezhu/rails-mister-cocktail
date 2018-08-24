@@ -1,1 +1,8 @@
-new.html.erb
+<div class="background" style="background-image: linear-gradient(rgba(0,0,0,1.5), rgba(0,0,0,0.7)), url('http://www.harbourviewhotelmacau.com/sites/default/files/praha_bar_3custom_0.jpg'); background-size: cover; height: 100vh;">
+  <%= simple_form_for [@cocktail, @dose] do |f| %>
+    <%= f.input :description, label: 'Description', error:'Description cannot be blank' %>
+    <%= f.association :ingredient%>
+    <%= f.submit "Add", class: "btn btn-warning" %>
+  <% end %>
+    </div>
+

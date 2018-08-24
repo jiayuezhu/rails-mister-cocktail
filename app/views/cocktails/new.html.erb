@@ -1,17 +1,13 @@
 <div class="background" style="background-image: linear-gradient(rgba(0,0,0,1.5), rgba(0,0,0,0.7)), url('http://www.harbourviewhotelmacau.com/sites/default/files/praha_bar_3custom_0.jpg'); background-size: cover; height: 100vh;">
-  <%= simple_form_for(@cocktail) do |f| %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
-  <% end %>
   <%= simple_form_for @cocktail do |f| %>
     <%= f.input :name, label: 'Name', error:'Name cannot be blank' %>
-
-    <div></div>
-
-
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
     <div class="row">
       <%= f.submit "Create Cocktail", class: "btn btn-primary" %>
-      <%= f.submit 'Cancel', class: "btn" %>
+    <%= link_to cocktails_path do %>
+    <%= f.submit "Cancel", class: "btn btn-primary" %>
+    <% end %>
     </div>
   <% end %>
 </div>
